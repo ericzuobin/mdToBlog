@@ -1,4 +1,5 @@
 (ns net.zuobin.study
+  (:gen-class :main true)
   (:use [clojure.java.io]))
 
 (defn endComment?
@@ -51,7 +52,7 @@
 (defn formateTitle
   "获取markdown博客文件的头信息！"
   [& args]
-  (format "---\nlayout: post\ntitle: \"\" \nme: true\nmodified: %s \ndate: %s \ntags: [] \ncategories:[] \ndescription: \"\"\n---\n\n"
+  (format "---\nlayout: post\ntitle: \"\" \nme: true\nmodified: %s \ndate: %s \ntags: [] \ncategories:  [] \ndescription: \"\"\n---\n\n"
           (formateDate true) (formateDate false))
   )
 
