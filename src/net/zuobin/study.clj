@@ -4,10 +4,10 @@
 
 (defn endComment?
   "是否是注释最后"
-  [line]
-  (if (and (= (.lastIndexOf line "~") (- (.length line) 1)) (not= (.lastIndexOf line "~") -1))
-      "{% endhighlight %}"
-      (println-str "{% highlight " (.substring line (+ (.lastIndexOf line "~") 1) (.length line))  " %}")))
+  [li]
+  (let [line (.trim li)] (if (and (= (.lastIndexOf line "~") (- (.length line) 1)) (not= (.lastIndexOf line "~") -1))
+     "{% endhighlight %}\n"
+     (println-str "{% highlight " (.substring line (+ (.lastIndexOf line "~") 1) (.length line)) " %}"))))
 
 (defn writeFile
   "写文件操作"
